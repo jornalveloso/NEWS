@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>NEWS • Newsletter Veloso</title>
+  <meta name="description" content="Seleção diária de Cartórios, Corretores, IA e Vagas" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <img class="logo" src="assets/favicon.svg" alt="NV">
+      <div>
+        <h1>Newsletter Veloso</h1>
+        <p id="edition-date">Carregando edição...</p>
+      </div>
+    </div>
+    <div class="actions">
+      <button id="refresh">Atualizar</button>
+      <button id="themeBtn" title="Alternar tema">🌗</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section" id="cartorios"><h2>Cartórios (RJ)</h2><div class="grid" data-sec="cartorios"></div></section>
+    <section class="section" id="corretores"><h2>Corretores (CRECI/COFECI)</h2><div class="grid" data-sec="corretores"></div></section>
+    <section class="section" id="ia"><h2>Inteligência Artificial</h2><div class="grid" data-sec="ia"></div></section>
+    <section class="section" id="vagas"><h2>Vagas & Gigs (IA)</h2><div class="grid" data-sec="vagas"></div></section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Newsletter Veloso • Leitura rápida e gostosa 🙂</p>
+    <p><a href="feed.json" target="_blank" rel="noreferrer">Abrir feed.json</a></p>
+  </footer>
+
+  <template id="card-tpl">
+    <article class="card">
+      <a class="thumb" target="_blank" rel="noreferrer">
+        <img loading="lazy" alt="">
+      </a>
+      <div class="meta">
+        <a class="title" target="_blank" rel="noreferrer"></a>
+        <p class="source"></p>
+        <p class="summary"></p>
+      </div>
+    </article>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>

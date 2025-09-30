@@ -1,0 +1,11 @@
+{
+  "name": "news-site",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node generator/build.js"
+  },
+  "dependencies": {
+    "axios": "^1.7.2"
+  }
+}
