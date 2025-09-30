@@ -1,0 +1,22 @@
+name: Generate Feed
+on:
+  schedule:
+    - cron: '30 10 * * *'
+  workflow_dispatch: {}
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      - run: npm ci
+      - name: Build feed.json (OpenAI)
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: node generator/build.js
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "update feed.json"
+          file_pattern: feed.json
